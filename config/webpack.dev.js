@@ -12,7 +12,7 @@ module.exports = {
     },
     devServer: {
         contentBase: 'dist',
-        overlay: true
+        overlay: true // shows errors as overlay in browser
     },
     module: {
         rules: [{

@@ -6,3 +6,4 @@ To run this project:
 2) npm install -g webpack webpack-cli nodemon
 3) npm run build
 4) npm run dev or npm start
+5) view on localhost:7000, you may also change the port in src/server/express.js

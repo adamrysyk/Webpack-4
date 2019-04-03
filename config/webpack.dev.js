@@ -17,7 +17,7 @@ module.exports = {
         overlay: true, // shows errors as overlay in browser
         hot: true,
         stats: {
-            colors: true
+            colors: true // shows colors in terminal console
         }
     },
     devtool: 'source-map',

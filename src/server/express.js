@@ -20,5 +20,5 @@ server.use(webpackHotMiddleware);
 server.use(staticMiddleware);
 
 server.listen(7000, () => {
-    console.log('Server is listening...');
+    console.log('Server is listening on port 7000.');
 });

@@ -56,7 +56,8 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.ejs',
+            title: 'Mochi\'s Journal'
         })
     ]
 };

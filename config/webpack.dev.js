@@ -48,7 +48,20 @@ module.exports = {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: 'images/[name].[ext]'
+                    name: 'images/[name]-[hash:8].[ext]'
+                }
+            }]
+        }, {
+            test: /\.pug$/,
+            use: [{
+                loader: 'pug-loader'
+            }]
+        }, {
+            test: /\.hbs/,
+            use: [{
+                loader: 'handlebars-loader',
+                query: {
+                    inlineRequires: '/images/'
                 }
             }]
         }]
@@ -56,7 +69,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
-            template: './src/index.ejs',
+            template: './src/index.hbs', // change to .ejs or .pug to test other html preprocessors
             title: 'Mochi\'s Journal'
         })
     ]

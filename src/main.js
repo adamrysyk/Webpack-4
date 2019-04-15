@@ -1,4 +1,4 @@
 require('babel-runtime/regenerator');
 require('webpack-hot-middleware/client?reload=true');
-require('./main.css');
-require('./index.html');
+require('./main.sass');
+require('./images/mochi.jpg');

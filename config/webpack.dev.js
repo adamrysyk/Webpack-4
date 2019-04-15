@@ -36,6 +36,15 @@ module.exports = {
                 loader: 'css-loader'
             }]
         }, {
+            test: /\.sass/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader'
+            }, {
+                loader: 'sass-loader'
+            }]
+        }, {
             test: /\.html$/,
             use: [{
                 loader: 'html-loader',
@@ -69,7 +78,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
-            template: './src/index.hbs', // change to .ejs or .pug to test other html preprocessors
+            template: './src/index.ejs', // change to .ejs or .pug to test other html preprocessors
             title: 'Mochi\'s Journal'
         })
     ]

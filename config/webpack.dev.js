@@ -5,7 +5,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: ['./src/main.js'],
-        ts: ['./src/index.ts']
+        polyfills: ["./src/angular-polyfills"],
+        angular: ['./src/angular']
+    },
+    resolve: {
+        extensions: ['.js', '.ts']
     },
     mode: 'development',
     output: {
@@ -15,6 +19,7 @@ module.exports = {
     },
     devServer: {
         contentBase: 'dist',
+        historyApiFallBack: true, // for angular routing (not used in this project)
         overlay: true, // shows errors as overlay in browser
         hot: true,
         stats: {
@@ -62,6 +67,11 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/core)/,
+            path.join(__dirname, './src'),
+            {}
+        ),
         new HTMLWebpackPlugin({
             template: './src/index.html'
         })

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: #444;
+    text-align: center;
 }
 
 .profile {
@@ -22,4 +23,9 @@ h1 {
     font-size: 5em;
     font-family: sans-serif;
     text-shadow:  0 0 20px black;
+    text-align: center;
+}
+
+.counter {
+    text-decoration: underline;
 }

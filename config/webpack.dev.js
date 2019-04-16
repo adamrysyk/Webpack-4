@@ -33,7 +33,11 @@ module.exports = {
             use: [{
                 loader: 'style-loader'
             }, {
-                loader: 'css-loader'
+                loader: 'css-loader',
+                query: {
+                    modules: true,
+                    localIdentName: '[name]--[local]--[hash:base64:8]'
+                }
             }]
         }, {
             test: /\.html$/,

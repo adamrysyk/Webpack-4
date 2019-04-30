@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import styles from './main.css';
 
 const Fancy = styled.h1({
-    fontSize: '10em'
+    fontSize: '5em'
 }, props => ({
     color: props.wild ? 'hotpink' : 'gold',
 }));

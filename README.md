@@ -14,9 +14,9 @@ To run this project locally:
 
 In this project I experimented with setting up webpack with different environments<br>
 Different environents can be found in the following branches:<br>
-react: react<br>
-typescript: typescript<br>
-angular: angular 7<br>
-vue: vue<br>
-ejs-pug-handlebars: ejs, pug and handlebars templating engines<br>
-css-preprocessors-sass-less-stylus: sass, less and stylus css preprocessors<br>
+* react: react<br>
+* typescript: typescript<br>
+* angular: angular 7<br>
+* vue: vue<br>
+* ejs-pug-handlebars: ejs, pug and handlebars templating engines<br>
+* css-preprocessors-sass-less-stylus: sass, less and stylus css preprocessors<br>

@@ -13,4 +13,11 @@ To run this project locally:
 5) view on localhost:7000, you may also change the port in src/server/express.js
 
 In this project I experimented with setting up webpack with different environments.
-Some of the environents can be found in alternate origin branches.
+Different environents can be found in branches apart from master.
+
+react: react
+typescript: typescript
+angular: angular 7
+vue: vue
+ejs-pug-handlebars: ejs, pug and handlebars templating engines
+css-preprocessors-sass-less-stylus: sass, less and stylus css preprocessors

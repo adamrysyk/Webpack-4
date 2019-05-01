@@ -1,5 +1,6 @@
 require('./images/mochi.jpg');
 require('./index.html');
+require('./main.css');
 require('./app');
 require('react');
 

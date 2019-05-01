@@ -2,7 +2,7 @@ A sandbox project used to learn Webpack 4.
 
 To view production:
 
-Visit [https://evening-anchorage-97904.herokuapp.com/].
+Visit https://evening-anchorage-97904.herokuapp.com.
 
 To run this project locally:
 

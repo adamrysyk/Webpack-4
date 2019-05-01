@@ -13,8 +13,7 @@ To run this project locally:
 5) view on localhost:7000, you may also change the port in src/server/express.js
 
 In this project I experimented with setting up webpack with different environments<br>
-Different environents can be found in the following branches.
-
+Different environents can be found in the following branches:<br>
 react: react<br>
 typescript: typescript<br>
 angular: angular 7<br>

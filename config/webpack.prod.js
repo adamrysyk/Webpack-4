@@ -4,6 +4,7 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -69,7 +70,10 @@ module.exports = env => {
                     'NODE_ENV': JSON.stringify(env.NODE_ENV)
                 }
             }),
-            new UglifyJSPlugin()
+            new UglifyJSPlugin(),
+            new CompressionPlugin({
+                algorithm: 'gzip'
+            })
         ]
     }
 };

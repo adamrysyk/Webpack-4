@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = env => {
@@ -20,7 +22,6 @@ module.exports = env => {
             path: path.resolve(__dirname, '../dist'),
             publicPath: "/"
         },
-        devtool: 'source-map',
         module: {
             rules: [{
                 test: /\.js$/,
@@ -59,13 +60,16 @@ module.exports = env => {
                 filename: "[name]-[contenthash].css"
             }),
             new HTMLWebpackPlugin({
-                template: './src/index.html'
+                template: './src/index.ejs',
+                inject: true,
+                title: 'Mochi\'s Journal'
             }),
             new webpack.DefinePlugin({
                 'process.env': {
                     'NODE_ENV': JSON.stringify(env.NODE_ENV)
                 }
-            })
+            }),
+            new UglifyJSPlugin()
         ]
     }
 };

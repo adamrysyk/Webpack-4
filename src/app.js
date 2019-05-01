@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './counter';
 import { AppContainer } from 'react-hot-loader';
 
 function render(Component) {

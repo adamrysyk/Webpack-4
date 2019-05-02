@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './main.css';
+import './content.css';
+
 import AppRoot from './components/AppRoot';
 import { AppContainer } from 'react-hot-loader';
 import Data from '../data/bio';
@@ -7,7 +10,7 @@ import Data from '../data/bio';
 function render(Component) {
     ReactDOM.render(
         <AppContainer>
-            <Component heading={Data.heading} content={Data.bioText} />
+            <Component heading={Data.heading} />
         </AppContainer>,
         document.getElementById("react-root")
     )

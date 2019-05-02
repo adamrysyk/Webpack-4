@@ -1,4 +1,5 @@
 import React from 'react';
+import MarkdownData from '../../data/post.md';
 
 export default class extends React.Component {
     constructor(props) {
@@ -11,7 +12,12 @@ export default class extends React.Component {
             <div className="profile">
                 <img src={require('../images/mochi.jpg')} />
                 <h1>{this.props.heading}</h1>
-                <div className="content">{this.props.content}</div>
+                <div
+                    className="content"
+                    dangerouslySetInnerHTML={{
+                        __html: MarkdownData
+                    }}>
+                </div>
             </div>
         )
     }

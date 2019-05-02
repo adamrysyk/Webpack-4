@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: #444;
@@ -5,20 +9,20 @@ body {
 }
 
 .profile {
-    height: 100vh;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    padding: 2em;
 }
 
-img {
+.profile > img {
     border-radius: 100%;
     width: 300px;
     box-shadow: 0 0 20px black;
 }
 
-h1 {
+.profile > h1 {
     color: white;
     font-size: 5em;
     font-family: sans-serif;
@@ -26,6 +30,8 @@ h1 {
     text-align: center;
 }
 
-.counter {
-    text-decoration: underline;
+.content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
 }

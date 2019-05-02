@@ -1,5 +1,5 @@
-require('./images/mochi.jpg');
-require('./index.html');
-require('./main.css');
-
+import './main.css';
+import './content.css';
+import './images/mochi.jpg';
+import './app';
 console.log(`Environment is ${process.env.NODE_ENV}`);

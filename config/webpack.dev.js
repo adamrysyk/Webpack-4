@@ -5,6 +5,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: [
+            "react-hot-loader/patch",
             'babel-runtime/regenerator',
             'babel-register',
             'webpack-hot-middleware/client?reload=true',
@@ -39,10 +40,6 @@ module.exports = {
                 loader: 'style-loader'
             }, {
                 loader: 'css-loader',
-                query: {
-                    modules: true,
-                    localIdentName: '[name]--[local]--[hash:base64:8]'
-                }
             }]
         }, {
             test: /\.html$/,
@@ -60,14 +57,26 @@ module.exports = {
                     name: 'images/[name].[ext]'
                 }
             }]
+        }, {
+            test: /\.md$/,
+            use: [{
+                loader: 'html-loader'
+            }, {
+                loader: 'markdown-loader'
+            }]
         }]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("development")
+            }
+        }),
         new HTMLWebpackPlugin({
-            template: './src/index.ejs',
+            template: "./src/index.ejs",
             inject: true,
-            title: 'Mochi\'s Journal'
+            title: "Link's Journal"
         })
     ]
 };

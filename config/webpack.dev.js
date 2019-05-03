@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     entry: {
@@ -24,6 +25,18 @@ module.exports = {
         hot: true,
         stats: {
             colors: true // shows colors in terminal console
+        }
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                vendor: {
+                    name: 'vendor',
+                    chunks: 'initial',
+                    minChunks: 2
+                }
+            }
         }
     },
     devtool: 'source-map',
@@ -75,6 +88,9 @@ module.exports = {
             template: "./src/index.ejs",
             inject: true,
             title: "Mochi\'s Journal"
+        }),
+        new BundleAnalyzerPlugin({
+            generateStatsFile: true
         })
     ]
 };

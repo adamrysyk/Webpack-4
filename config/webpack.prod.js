@@ -12,7 +12,6 @@ module.exports = env => {
     return {
         entry: {
             main: [
-                'babel-register',
                 './src/main.js'
             ]
         },
@@ -21,6 +20,18 @@ module.exports = env => {
             filename: '[name]-bundle.js',
             path: path.resolve(__dirname, '../dist'),
             publicPath: "/"
+        },
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+                cacheGroups: {
+                    vendor: {
+                        name: 'vendor',
+                        chunks: 'initial',
+                        minChunks: 2
+                    }
+                }
+            }
         },
         module: {
             rules: [{

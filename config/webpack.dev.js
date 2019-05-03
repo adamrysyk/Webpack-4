@@ -60,9 +60,7 @@ module.exports = {
         }, {
             test: /\.md$/,
             use: [{
-                loader: 'html-loader'
-            }, {
-                loader: 'markdown-loader'
+                loader: 'markdown-with-front-matter-loader'
             }]
         }]
     },
@@ -76,7 +74,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: "./src/index.ejs",
             inject: true,
-            title: "Link's Journal"
+            title: "Mochi\'s Journal"
         })
     ]
 };

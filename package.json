@@ -8,7 +8,7 @@
     "build": "webpack --config=config/webpack.prod.js --env.NODE_ENV=production",
     "build:dev": "webpack --config=config/webpack.dev.js",
     "dev": "nodemon --inspect --watch config --watch src/server src/server/main.js",
-    "prod": "NODE_ENV=production node src/server/main.js"
+    "prod": "node src/server/main.js --env.NODE_ENV=production"
   },
   "keywords": [],
   "author": "",

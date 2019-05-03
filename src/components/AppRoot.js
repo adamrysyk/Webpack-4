@@ -10,7 +10,7 @@ export default class extends React.Component {
     render() {
         return (
             <div className="profile">
-                <img src={require('../images/mochi.jpg')} />
+                <img src={} />
                 <h1>{MarkdownData.title}</h1>
                 <div
                     className="content"

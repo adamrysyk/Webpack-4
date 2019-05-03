@@ -5,6 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
     entry: {
+        vendor: ['react'],
         main: [
             "react-hot-loader/patch",
             'babel-runtime/regenerator',
@@ -84,11 +85,11 @@ module.exports = {
                 NODE_ENV: JSON.stringify("development")
             }
         }),
-        new HTMLWebpackPlugin({
-            template: "./src/index.ejs",
-            inject: true,
-            title: "Mochi\'s Journal"
-        }),
+        // new HTMLWebpackPlugin({
+        //     template: "./src/index.ejs",
+        //     inject: true,
+        //     title: "Mochi\'s Journal"
+        // }),
         new BundleAnalyzerPlugin({
             generateStatsFile: true
         })

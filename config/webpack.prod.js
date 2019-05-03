@@ -11,6 +11,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = env => {
     return {
         entry: {
+            vendor: ['react', 'react-dom'],
             main: [
                 './src/main.js'
             ]
@@ -75,11 +76,11 @@ module.exports = env => {
             new MiniCSSExtractPlugin({
                 filename: "[name]-[contenthash].css"
             }),
-            new HTMLWebpackPlugin({
-                template: './src/index.ejs',
-                inject: true,
-                title: 'Mochi\'s Journal'
-            }),
+            // new HTMLWebpackPlugin({
+            //     template: './src/index.ejs',
+            //     inject: true,
+            //     title: 'Mochi\'s Journal'
+            // }),
             new webpack.DefinePlugin({
                 'process.env': {
                     'NODE_ENV': JSON.stringify(env.NODE_ENV)

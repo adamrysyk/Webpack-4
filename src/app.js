@@ -15,11 +15,11 @@ function render(Component) {
         document.getElementById("react-root")
     )
 }
-render(AppRoot)
+render(AppRoot);
 
 if (module.hot) {
     module.hot.accept("./components/AppRoot.js", () => {
-        const NewAppRoot = require("./components/AppRoot.js").default
-        render(NewAppRoot)
+        const NewAppRoot = require("./components/AppRoot.js").default;
+        render(NewAppRoot);
     })
 }

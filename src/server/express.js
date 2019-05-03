@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import AppRoot from '../components/AppRoot.js';
@@ -44,9 +43,9 @@ server.get('*', (req, res) => {
             </body>
         </html>
     `);
-})
+});
 
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 7000;
 
 server.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}.`);

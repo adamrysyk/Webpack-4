@@ -73,7 +73,7 @@ module.exports = env => {
         plugins: [
             new OptimizeCssAssetsPlugin(),
             new MiniCSSExtractPlugin({
-                filename: "[name]-[contenthash].css"
+                filename: "[name].css"
             }),
             // new HTMLWebpackPlugin({
             //     template: './src/index.ejs',
